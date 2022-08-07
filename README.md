@@ -39,3 +39,9 @@ Using the Docker image for [pyspark](https://hub.docker.com/r/apache/spark-py). 
 docker run -it --mount type=bind,source="$(pwd)/data",target=/mydata apache/spark-py /opt/spark/bin/pyspark
 ```
 
+### Running on Ibex
+
+```
+(venv) [garcm0b@cn513-10-r spark-nlp-book]$ spark-submit --packages com.johnsnowlabs.nlp:spark-nlp_2.12:4.0.2 bash/load_data.py 
+```
+
