@@ -38,12 +38,15 @@ def main(spark):
 
     texts_df.show(5)
 
-    pipeline = PRETRAIN.PretrainedPipeline('explain_document_ml', lang='en')
+    pipeline = PRETRAIN.PretrainedPipeline('explain_document_ml')
 
-    pipeline.annotate('hello worldu')
+    print(pipeline.annotate('hello worldu'))
 
 if __name__ == "__main__":
-    spark = SS.builder.appName('Staring to NLP').master('local[*]').getOrCreate()
+    spark = SS.builder\
+        .appName('Staring to NLP')\
+        .master('local[*]')\
+        .getOrCreate()
 
     spark.sparkContext.setLogLevel('WARN')
     main(spark)
